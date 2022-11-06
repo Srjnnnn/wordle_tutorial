@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @game %>
+
+<% @game.words.map do |word| %>
+  <div>
+    <%= word.content %> 
+    
+      <% if !@game.known_indexes.empty? %>
+        <% word.content.split('').each_with_index do |char, index| %>
+           <% if @game.known_indexes.include?(index) %>
+            <span><%= char %></span>
+          <% else %>
+            <span>_</span>
+           <% end %>
+        <% end %>
+     <% end %>
+    
+  </div>
+<% end %>
+
+<div>
+  <%= form_tag try_game_path, method: :post do %>
+   <%= text_field_tag :character %>
+   <%= submit_tag 'try' %>
+<% end %>
+</div>
+<div>
+  <%= link_to "Edit this game", edit_game_path(@game) %> |
+  <%= link_to "Back to games", games_path %>
+
+  <%= button_to "Destroy this game", @game, method: :delete %>
+</div>
