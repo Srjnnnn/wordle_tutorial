@@ -2,8 +2,31 @@
 
 <%= render @game %>
 
+<div>
+  
+  <div class='flex-container'>
+  <% @keys[0..10].each do |key| %>
+    
+      <%= button_to key, try_game_path(:character => key), method: :post, class: "white" %>
+    <% end %> 
+  
+</div>
+<div class='flex-container'>
+  <% @keys[10..20].each do |key| %>
+    
+      <%= button_to key, try_game_path(:character => key), method: :post, class: "white" %>
+    <% end %> 
+  
+</div>
+<div class='flex-container'>
+  <% @keys[20..26].each do |key| %>
+    
+      <%= button_to key, try_game_path(:character => key), method: :post, class: "white" %>
+    <% end %> 
+  
+</div>
 <% @game.words.map do |word| %>
-  <div>
+  <div class='word-content'>
     <%= word.content %> 
     
       <% if !@game.known_indexes.empty? %>
@@ -19,13 +42,13 @@
   </div>
 <% end %>
 
-<div>
-  <%= form_tag try_game_path, method: :post do %>
-   <%= text_field_tag :character %>
+<div class='center'>
+  <%= form_tag check_game_path, method: :post do %>
+   <%= text_field_tag :check %>
    <%= submit_tag 'try' %>
 <% end %>
 </div>
-<div>
+<div class='last-items'>
   <%= link_to "Edit this game", edit_game_path(@game) %> |
   <%= link_to "Back to games", games_path %>
 

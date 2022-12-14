@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: wordle_tutorial_development
   pool: 5
-  username: eyupsercanuygur
+  username: eypsrcnuygr
   timeout: 5000
  
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,5 +48,5 @@ test:
   encoding: unicode
   database: wordle_tutorial_test
   pool: 5
-  username: eyupsercanuygur
+  username: eypsrcnuygr
   timeout: 5000

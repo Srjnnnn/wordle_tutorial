@@ -1,6 +1,6 @@
 require 'pry'
 class GamesController < ApplicationController
-  before_action :set_game, only: %i[show edit update destroy try]
+  before_action :set_game, only: %i[show edit update destroy try check]
 
   # GET /games or /games.json
   def index
@@ -8,7 +8,36 @@ class GamesController < ApplicationController
   end
 
   # GET /games/1 or /games/1.json
-  def show; end
+  def show 
+    @keys = [
+      'Q',
+      'W',
+      'E',
+      'R',
+      'T',
+      'Y',
+      'U',
+      'I',
+      'O',
+      'P',
+      'A',
+      'S',
+      'D',
+      'F',
+      'G',
+      'H',
+      'J',
+      'K',
+      'L',
+      'Z',
+      'X',
+      'C',
+      'V',
+      'B',
+      'N',
+      'M'
+  ]
+  end
 
   # GET /games/new
   def new
@@ -64,7 +93,7 @@ class GamesController < ApplicationController
   def try
     result = []
     @game.words.first.content.split('').each_with_index do |item, index|
-      result.push(index) if item == params[:character]
+      result.push(index) if item == params[:character].downcase
       @game.win if @game.check_win?
     end
     
@@ -72,7 +101,7 @@ class GamesController < ApplicationController
       if @game.check_win?
         format.html { redirect_to game_url(@game), notice: "You\'ve won! #{@game.words.first.content}" }
         format.json { render :show, status: :ok, location: @game }
-      elsif @game.attempts < 5 && !@game.won
+      elsif @game.attempts < 8 && !@game.won
         if !result.empty?
           @game.attempts += 1
           
@@ -94,11 +123,26 @@ class GamesController < ApplicationController
           format.html { redirect_to game_url(@game), notice: 'Nope wrong choice!' }
           format.json { render json: @game, status: :ok }
         end
-      elsif @game.attempts == 5 && !@game.won
+      elsif @game.attempts == 8 && !@game.won
         @game.attempts += 1
         @game.save!
         format.html { redirect_to game_url(@game), notice: 'You have lost!', status: :unprocessable_entity }
         format.json { render json: @game, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def check
+    @game.attempts += 1
+    @game.save
+    respond_to do |format|
+      if params[:check].downcase == @game.words.first.content
+        @game.win
+        format.html { redirect_to game_url(@game), notice: "You\'ve won! #{@game.words.first.content}" }
+        format.json { render :show, status: :ok, location: @game }
+      else
+        format.html { redirect_to game_url(@game), notice: 'Nope wrong choice!' }
+        format.json { render json: @game, status: :ok }
       end
     end
   end

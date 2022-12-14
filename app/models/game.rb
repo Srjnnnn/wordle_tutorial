@@ -7,6 +7,7 @@ class Game < ApplicationRecord
 
   def win
     self.won = true
+    self.known_indexes = [0, 1, 2, 3, 4]
     save
   end
 end
