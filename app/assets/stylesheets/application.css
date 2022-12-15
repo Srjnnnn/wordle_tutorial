@@ -28,7 +28,7 @@
  .white {
   color: white;
   border: 1px solid rgb(185, 184, 184);
-  width: 4em;
+  width: 3.5em;
  }
 
  .center, .last-items, .word-content {
@@ -53,4 +53,12 @@
   border: 2px solid rgb(185, 184, 184);
   box-shadow: 3px 3px 4px 5px #0d47a1;
   border-radius: 5px;
+ }
+
+ .game-container {
+  margin-top: 15px;
+  background-color: aliceblue;
+  width: 100%;
+  padding: 8%;
+  border: 2px solid rgb(221, 216, 216);
  }
