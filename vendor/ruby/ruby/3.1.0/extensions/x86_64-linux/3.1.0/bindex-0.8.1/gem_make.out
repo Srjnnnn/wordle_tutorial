@@ -1,0 +1,15 @@
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/home/eypsrcnuygr/.rvm/rubies/ruby-3.1.2/bin/ruby -I /home/eypsrcnuygr/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20221106-20343-jn8u46.rb extconf.rb
+creating Makefile
+
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -m 0755 cruby.so ./.gem.20221106-20343-yhe0yw/skiptrace/internal

@@ -1,0 +1,16 @@
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+/home/eypsrcnuygr/.rvm/rubies/ruby-3.1.2/bin/ruby -I /home/eypsrcnuygr/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20221106-20343-fosoqw.rb extconf.rb
+creating Makefile
+
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/eypsrcnuygr/personal/wordle_tutorial/vendor/ruby/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= install
+/usr/bin/install -m 0755 debug.so ./.gem.20221106-20343-55wbrz/debug
