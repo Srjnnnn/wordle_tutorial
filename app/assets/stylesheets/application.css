@@ -17,11 +17,12 @@
 
  .flex-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
  }
 
  .white {
   color: white;
+  border: 1px solid black
  }
 
  .center, .last-items, .word-content {
@@ -31,4 +32,18 @@
 
  .word-content {
   font-weight: 800;
+ }
+
+ .submit {
+  background-color: rgb(3, 160, 3) !important;
+  border: 1px solid black !important
+ }
+
+ .destroy {
+  background-color: rgb(196, 26, 26) !important;
+ }
+
+ .keyboard {
+  border: 2px solid black;
+  box-shadow: 5px 5px;
  }

@@ -4,6 +4,7 @@
 
 <div>
   
+  <div class='keyboard'> 
   <div class='flex-container'>
   <% @keys[0..10].each do |key| %>
     
@@ -25,6 +26,7 @@
     <% end %> 
   
 </div>
+  </div>
 <% @game.words.map do |word| %>
   <div class='word-content'>
     <%= word.content %> 
@@ -45,12 +47,12 @@
 <div class='center'>
   <%= form_tag check_game_path, method: :post do %>
    <%= text_field_tag :check %>
-   <%= submit_tag 'try' %>
+   <%= submit_tag 'guess!', class: 'submit' %>
 <% end %>
 </div>
 <div class='last-items'>
   <%= link_to "Edit this game", edit_game_path(@game) %> |
   <%= link_to "Back to games", games_path %>
 
-  <%= button_to "Destroy this game", @game, method: :delete %>
+  <%= button_to "Destroy this game", @game, class: 'destroy', method: :delete %>
 </div>
