@@ -6,14 +6,14 @@
   
   <div class='keyboard'> 
   <div class='flex-container'>
-  <% @keys[0..10].each do |key| %>
+  <% @keys[0..9].each do |key| %>
     
       <%= button_to key, try_game_path(:character => key), method: :post, class: "white" %>
     <% end %> 
   
 </div>
 <div class='flex-container'>
-  <% @keys[10..20].each do |key| %>
+  <% @keys[10..19].each do |key| %>
     
       <%= button_to key, try_game_path(:character => key), method: :post, class: "white" %>
     <% end %> 

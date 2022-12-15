@@ -14,15 +14,21 @@
  *= require_self
  */
 
+ body {
+  font-family: 'Roboto Slab', serif;
+ }
+
 
  .flex-container {
   display: flex;
   justify-content: center;
+  background-color: rgb(156, 165, 184) !important;
  }
 
  .white {
   color: white;
-  border: 1px solid black
+  border: 1px solid rgb(185, 184, 184);
+  width: 4em;
  }
 
  .center, .last-items, .word-content {
@@ -35,15 +41,16 @@
  }
 
  .submit {
-  background-color: rgb(3, 160, 3) !important;
-  border: 1px solid black !important
+  background-color: #0d47a1 !important;
+  border: 1px solid rgb(185, 184, 184) !important
  }
 
  .destroy {
-  background-color: rgb(196, 26, 26) !important;
+  background-color: rgb(131, 150, 187) !important;
  }
 
  .keyboard {
-  border: 2px solid black;
-  box-shadow: 5px 5px;
+  border: 2px solid rgb(185, 184, 184);
+  box-shadow: 3px 3px 4px 5px #0d47a1;
+  border-radius: 5px;
  }
